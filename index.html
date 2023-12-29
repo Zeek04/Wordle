@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Wordle</title>
 </head>
 <body>
-    
+    <div class="title">
+        <h1 id="wordleTitle">WORDLE</h1>
+    </div>
+    <div class="wordInput">
+        <input type="text"  id ="guessword" maxlength="5">
+    </div>
+    <div class="letterButtons">
+        <!-- Create buttons for each letter -->
+        <button onclick="addLetter('Q')">Q</button>
+        <button onclick="addLetter('W')">W</button>
+        <button onclick="addLetter('R')">R</button>
+        <button onclick="addLetter('T')">T</button>
+        <button onclick="addLetter('Y')">Y</button>
+        <button onclick="addLetter('U')">U</button>
+        <button onclick="addLetter('I')">I</button>
+        <button onclick="addLetter('O')">O</button>
+        <button onclick="addLetter('P')">P</button>
+        <button onclick="addLetter('A')">A</button>
+        <button onclick="addLetter('S')">S</button>
+        <button onclick="addLetter('D')">D</button>
+        <button onclick="addLetter('F')">F</button>
+        <button onclick="addLetter('G')">G</button>
+        <button onclick="addLetter('H')">H</button>
+        <button onclick="addLetter('J')">J</button>
+        <button onclick="addLetter('K')">K</button>
+        <button onclick="addLetter('L')">L</button>
+        <button onclick="addLetter('Z')">Z</button>
+        <button onclick="addLetter('X')">X</button>
+        <button onclick="addLetter('C')">C</button>
+        <button onclick="addLetter('V')">V</button>
+        <button onclick="addLetter('B')">B</button>
+        <button onclick="addLetter('N')">N</button>
+        <button onclick="addLetter('M')">M</button>
+        <!-- Add buttons for other letters as needed -->
+    </div>
+    <div class="submitButton">
+        <button type="submit">Submit</button>
+    </div>
 </body>
     <script src="script.js"></script>
 </html>
