@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 50px;
-    background-color: #444;
+    background-color: #222;
 }
 
 h1 {
@@ -29,9 +29,29 @@ h1 {
 }
 
 .square{
-    border: 2px solid rgb(30, 30, 30);
+    border: 2px solid rgb(70, 70, 70);
     min-width: 55px;
     min-height: 55px;
     font-weight: bold;
     font-size: 2rem;
+}
+
+.keyboard-row{
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+    margin-top: 10px;
+}
+
+.keyboard-row button{
+    margin-top: 10px;
+    padding: 7px 8px;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 3px;
+    user-select: none;
 }
