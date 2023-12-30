@@ -2,13 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
   createSquare();
 
   const key = document.querySelectorAll('.keyboard-row button')
+  const guessedWords = [[]]
 
   for(let i = 0; i < key.length; i++){
     key[i].onclick = ({target}) => {
-        const key = target.getAttribute("data-key")
+        const letter = target.getAttribute("data-key")
 
-        console.log(key)
+        updateGuessWord(letter)
     }
+  }
+
+  function getCurrentWordArr(){
+    const numberOfGuessedWords = guessedWords.length
+    return guessedWords[numberOfGuessedWords - 1]
+  }
+
+  function updateGuessWord(letter){
+        const currentWordArr = getCurrentWordArr()
+
+        if(currentWordArr && currentWordArr.length < 5){
+            currentWordArr.push(letter)
+        }
   }
 
   function createSquare() {
