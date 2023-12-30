@@ -33,7 +33,12 @@ h1 {
     min-width: 55px;
     min-height: 55px;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 45px;
+    color: gainsboro;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .keyboard-row{

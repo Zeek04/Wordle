@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   createSquare();
 
   const key = document.querySelectorAll('.keyboard-row button')
-  const guessedWords = [[]]
+  let guessedWords = [[]]
+  let availableSpace = 1;
 
   for(let i = 0; i < key.length; i++){
     key[i].onclick = ({target}) => {
@@ -22,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(currentWordArr && currentWordArr.length < 5){
             currentWordArr.push(letter)
+
+            const availableSpaceElement = document.getElementById(String(availableSpace))
+            availableSpace = availableSpace + 1
+
+            availableSpaceElement.textContent = letter;
         }
   }
 
