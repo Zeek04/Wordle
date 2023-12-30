@@ -13,12 +13,11 @@
     <div class="title">
         <h1 id="wordleTitle">WORDLE</h1>
     </div>
-    <div id="wordDisplay"></div>
-    <div class="wordInput">
-        <input type="text"  id ="guessword" maxlength="5">
+
+    <div id="board-container">
+        <div id="board"></div>
     </div>
-    <div class="letterButtons">
-        <!-- Create buttons for each letter -->
+    <div class="keyboard-row"> <!-- Create buttons for each letter -->
         <button onclick="addLetter('Q')">Q</button>
         <button onclick="addLetter('W')">W</button>
         <button onclick="addLetter('E')">E</button>
@@ -40,6 +39,7 @@
         <button onclick="addLetter('K')">K</button>
         <button onclick="addLetter('L')">L</button>
         <br>
+        <button data-key"enter" class="wide-button">Enter</button>
         <button onclick="addLetter('Z')">Z</button>
         <button onclick="addLetter('X')">X</button>
         <button onclick="addLetter('C')">C</button>
@@ -47,10 +47,8 @@
         <button onclick="addLetter('B')">B</button>
         <button onclick="addLetter('N')">N</button>
         <button onclick="addLetter('M')">M</button>
+        <button data-key"del" class="wide-button">Del</button>
         <!-- Add buttons for other letters as needed -->
-    </div>
-    <div class="submitButton" id="submitBtn">
-        <button type="submit">Submit</button>
     </div>
 </body>
     <script src="script.js"></script>
