@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 30; i++) {
       let square = document.createElement("div");
       square.classList.add("square");
+      square.classList.add("animate_animated");
       square.setAttribute("id", i + 1);
       gameboard.appendChild(square);
     }
@@ -56,6 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentWord = currentWordArr.join('')
 
+    const interval = 200;
+    currentWordArr.forEach((letter, i) => {
+      setTimeout(() => {
+        const tileColor = "rgb(70, 70, 70)"
+      }, interval)
+    })
     if(currentWord === word){
       window.alert("Congratulations!")
     }
