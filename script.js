@@ -51,6 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function getTileColor(letter, i){
+    const isCorrectLetter = word.includes(letter)
+
+    if(!isCorrectLetter){
+      return "rgb(70, 70, 70)"
+    }
+
+    const letterInThatPosition = word.charAt(i)
+    const isCorrectPosition = letter = letterInThatPosition
+
+    if(isCorrectPosition){
+      return "rgb(83,141,78)"
+    }
+
+    return "rgb(181, 159, 59)" 
+  }
+
   function handleSubmitWord(){
     const currentWordArr = getCurrentWordArr()
     if(currentWordArr.length !== 5){
@@ -63,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const interval = 200;
     currentWordArr.forEach((letter, i) => {
       setTimeout(() => {
-        const tileColor = "rgb(70, 70, 70)"
+        const tileColor = getTileColor(letter, i);
 
         const letterId = firstLetterId + i;
         const letterEl = document.getElementById(letterId)
