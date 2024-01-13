@@ -1,12 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   createSquare();
+  getNewWord();
 
-  const key = document.querySelectorAll('.keyboard-row button')
   let guessedWords = [[]]
   let availableSpace = 1;
 
-  let word = "DAIRY"
+  let word;
   let guessedWordCount = 0;
+  
+
+  const key = document.querySelectorAll('.keyboard-row button')
+
+  function getNewWord(){
+    fetch(
+      `https://wordsapiv1.p.rapidapi.com/words/?random=true&lettersMin=5&lettersMax=5`,
+      {
+        method: "GET",
+        headers: {
+          'X-RapidAPI-Key': 'YOUR_KEY',
+          'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+      },
+    }
+ )
+    .then((response) => {
+      return response.json();
+    })
+    .then((res) => {
+      word = res.word;
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+  }
 
   for(let i = 0; i < key.length; i++){
     key[i].onclick = ({target}) => {
@@ -59,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const letterInThatPosition = word.charAt(i)
-    const isCorrectPosition = letter = letterInThatPosition
+    const isCorrectPosition = letter === letterInThatPosition
 
     if(isCorrectPosition){
       return "rgb(83,141,78)"
